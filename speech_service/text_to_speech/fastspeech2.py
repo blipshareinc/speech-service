@@ -46,7 +46,7 @@ def process(text: str, output_dir: str):
     audio_after = mb_melgan.inference(mel_after)[0, :, 0]
 
     # save to file
-    datetime_str = datetime.today().strftime('%Y-%m-%d_%H_%M_%S')
+    datetime_str = datetime.today().strftime('%Y-%m-%d-%H-%M-%S')
     output_file = path.join(output_dir, 'audio_%s.wav' % datetime_str)
     sf.write(output_file, audio_after, 22050, "PCM_16")
 
