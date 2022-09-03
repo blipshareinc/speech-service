@@ -1,38 +1,35 @@
 **<span style="color:yellow">WORK-IN-PROGRESS</span>**
+# Speech Service
+This is the voice addon for the home automation project. It consists of two microservices hosted in containers.
 
-# Home Automation Project
-A project to create replica of `Alexa` for home use to avoid data collection and control security.
+## 1. Speech-To-Text Service
+This service takes a `.wav` audio file as input and returns the corresponding text for the audio file. It utilizes DeepSpeech model to do so.
 
-## Services
-This project will have the following services:
+### To-Dos:
 
-### 1. UI/UX Service
-Provides user interface to interact with the system. 
-<p>
-<b>Status:</b> <span style="color:orange">Not Started</span>
-</p>
+* Create a `virtual` env and install the following packages
+  <ul>
+    <li>Gunicorn</li>
+    <li>Flask</li>
+  </ul>
 
-### 2. Speech Service
-Provides speech-to-text and text-to-speech services.
-[Read more](./speech_service/README.md)
-<p>
-<b>Status:</b> <span style="color:lime">In Progress</span>
-</p>
+* Create a python web app to listen for requests with `.wav` file as an input and provide the text as output to the client
 
-### 3. Data Storage Service
-Pushes and pulls data from the cloud for temporary storage. Data is deleted from the cloud and local storage after 10 minutes.
-<p>
-<b>Status:</b> <span style="color:orange">Not Started</span>
-</p>
+* Create a `requirements.txt` file
 
-### 4. Device Registration Service
-Provides service to register or unregister devices to be automated.
-<p>
-<b>Status:</b> <span style="color:orange">Not Started</span>
-</p>
+* Create a `Dockerfile`
 
-### 5. Light Control Service 
-Controls the lights registered in the `Device Registration Service`.
-<p>
-<b>Status:</b> <span style="color:orange">Not Started</span>
-</p>
+## 2. Text-To-Speech Service
+This Service takes text as input and converts and returns a `.wav` audio file. It utilizes fastspeech2 model to do so. [Read more](./text_to_speech/README.md)
+
+## Productionize
+The following steps should be done once both services can run as services in a container
+
+### 1. Facilitate Containers
+Create `dockercompose` file to facilitate both containers
+
+### 2. Version Control
+<ol>
+  <li> Save the images on <em>docker hub</em> </li>
+  <li> Save the app files on <em>github</em> </li>
+</ol>
