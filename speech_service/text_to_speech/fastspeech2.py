@@ -47,7 +47,7 @@ def process(text: str, output_dir: str):
 
     # save to file
     datetime_str = datetime.today().strftime('%Y-%m-%d-%H-%M-%S')
-    output_file = path.join(output_dir, 'audio_%s.wav' % datetime_str)
+    output_file = path.join(output_dir, 'audio-%s.wav' % datetime_str)
     sf.write(output_file, audio_after, 22050, "PCM_16")
 
     # return path of the audio file
