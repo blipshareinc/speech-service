@@ -10,9 +10,9 @@ services:
     network_mode: "host"
   speech_to_text:
     image: blipshare/speech_to_text:latest
-    container_name: text-to-speech
+    container_name: speech-to-text
     env_file:
-      - ./text_to_speech/.env
+      - ./speech_to_text/.env
     volumes:
       - ./output:/app/output
     network_mode: "host"
