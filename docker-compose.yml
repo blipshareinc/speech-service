@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  text_to_speech:
+    image: blipshare/text_to_speech:latest
+    container_name: text-to-speech
+    env_file:
+      - ./text_to_speech/.env
+    volumes:
+      - ./output:/app/output
+    network_mode: "host"
+  speech_to_text:
+    image: blipshare/speech_to_text:latest
+    container_name: text-to-speech
+    env_file:
+      - ./text_to_speech/.env
+    volumes:
+      - ./output:/app/output
+    network_mode: "host"

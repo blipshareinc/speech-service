@@ -7,15 +7,3 @@ This service takes a `.wav` audio file as input and returns the corresponding te
 
 ## 2. Text-To-Speech Service
 This Service takes text as input and converts and returns a `.wav` audio file. It utilizes fastspeech2 model to do so. [Read more](./text_to_speech/README.md)
-
-## Productionize
-The following steps should be done once both services can run as services in a container
-
-### 1. Facilitate Containers
-Create `dockercompose` file to facilitate both containers
-
-### 2. Version Control
-<ol>
-  <li> Save the images on <em>docker hub</em> </li>
-  <li> Save the app files on <em>github</em> </li>
-</ol>
