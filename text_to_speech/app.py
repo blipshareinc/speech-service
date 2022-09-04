@@ -22,7 +22,7 @@ def tts():
             if 'text' in json:
                 requestor = json['name']
                 text = json['text']
-                if len(json) > 0:
+                if len(text) > 0:
                     audio_file_path = process(text, '/app/output')
                     return jsonify({'requestor': requestor, 'data': audio_file_path})
 
